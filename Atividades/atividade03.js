@@ -60,9 +60,9 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 let misto = ["batata", 20, true, null]
+//
 console.log(misto, misto.length)
-
-
+//
 console.log("_______________________________");
 
 
@@ -78,13 +78,17 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 let aleatorio = ["banana", 28, false, 59, "corrida", true]
+//
 console.log(aleatorio)
+//
 aleatorio.shift()
 aleatorio.pop()
+//
 console.log(aleatorio)
+//
 aleatorio.unshift('carro')
 aleatorio.push(45)
+//
 console.log(aleatorio)
-
-
+//
 console.log("_______________________________");
