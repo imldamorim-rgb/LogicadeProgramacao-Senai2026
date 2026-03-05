@@ -1,126 +1,94 @@
-
 // ============================================================
-//   ATIVIDADE 01.1 – Variáveis e Tipos Primitivos em JavaScript
+//   ATIVIDADE 02 – Arrays (Listas) em JavaScript
 // ============================================================
 // Instruções: resolva cada exercício no espaço indicado.
 // Use console.log() para exibir os resultados.
 // ============================================================
 
+
 // ------------------------------------------------------------
-// EXERCÍCIO 1 – Apresentação criativa
+// EXERCÍCIO 1 – Criando e acessando arrays
 // ------------------------------------------------------------
-// Crie variáveis para nome, idade e hobby favorito.
-// Monte uma frase usando template literal que se apresente e diga o que gosta de fazer.
+// a) Crie uma array chamada "cores" com pelo menos 4 cores.
+// b) Exiba a primeira e a última cor usando índices.
 
 // → Seu código aqui:
-const nome1 = "Isabella"
-let idade1 = 16
-let hooby1 = "jogar vôlei e sair para algum lugar"
+let cores = ["azul", "amarelo", "vermelho", "roxo"]
 //
-const frase1 = `Olá, meu nome é ${nome1}, eu tenho ${idade1} anos e o meu hobby favorito nas horas vagas é ${hooby1}.`
-//
-console.log(frase1)
+console.log(cores[0]) 
+console.log(cores[3])
 
 console.log("_______________________________");
 
+
 // ------------------------------------------------------------
-// EXERCÍCIO 2 – Frase sobre clima
+// EXERCÍCIO 2 – Métodos básicos
 // ------------------------------------------------------------
-// Crie variáveis para cidade e temperatura atual (número).
-// Use template literal para criar uma frase como:
-// "Hoje em <cidade> está fazendo <temperatura>°C, perfeito para ..."
+// a) Adicione uma nova cor ao final de "cores", utilizando as funções de array.
+// b) Remova a primeira cor, utilizando as funções de array.
+// c) Exiba o array resultante e depois a quantidade de itens armazendos (length).
 
 // → Seu código aqui:
-const cidade1 = 'Jaraguá do Sul'
-let temperatura1 = 21
+cores.push('verde')
+cores.shift()
 //
-const frase2 = `Hoje em ${cidade1} está fazendo ${temperatura1}°C, perfeito para dar um passeio.`
+console.log(cores)
+console.log(cores.length)
 //
-console.log(frase2)
 console.log("_______________________________");
 
+
 // ------------------------------------------------------------
-// EXERCÍCIO 3 – Tipos primitivos em frases
+// EXERCÍCIO 3 – Números
 // ------------------------------------------------------------
-// Crie uma variável de cada tipo primitivo: string, number, boolean, undefined, null.
-// Para cada uma, exiba uma frase usando template literal que diga o valor e o tipo.
+// a) Crie um array de números.
+// b) Em uma única linha, exiba os valores armazenados nesta lista e a quantidade de números armazenados (quantidade de itens, não a soma)
 
 // → Seu código aqui:
-let string = 'Lógica de Programação'
-let number = 2
-let boolean = false
-let undefined
-let erro = null 
+let números = [1, 4, 9, 8, 16]
 //
-const fraseString = `O valor é ${string} e o tipo é ${typeof string}.`
-const fraseNumber = `O valor é ${number} e o tipo é ${typeof number}.`
-const fraseBoolean = `O valor é ${boolean} e o tipo é ${typeof boolean}.`
-const fraseUndefined = `O valor é ${undefined} e o tipo é ${typeof undefined}`
-const fraseErro = `O valor é ${erro} e o tipo é ${typeof erro}.`
+console.log(números, números.length)
 //
-console.log(fraseString)
-console.log(fraseNumber)
-console.log(fraseBoolean)
-console.log(fraseUndefined)
-console.log(fraseErro)
-
 console.log("_______________________________");
 
+
 // ------------------------------------------------------------
-// EXERCÍCIO 4 – Mini história
+// EXERCÍCIO 4 – Todos os tipos
 // ------------------------------------------------------------
-// Crie variáveis para personagem, idade, cidade e missão.
-// Monte uma frase usando template literal contando uma mini história com esses dados.
+// a) Crie um array com todos os tipos de dados que você conhece (number, string...).
+// b) Em uma única linha, exiba os valores armazenados nesta lista e a quantidade de itens armazenados
 
 // → Seu código aqui:
-const personagem1 = 'Adriele'
-let idade2 = 21
-const cidade2 = 'Curitiba'
-let missão1 = 'achar o amigo perdido'
+let misto = ["batata", 20, true, null]
 //
-const frase3 = `${personagem1} é uma moça de ${idade2} anos, sempre sonhou em ir para ${cidade2} e lá tinha apenas uma missão: ${missão1}.`
+console.log(misto, misto.length)
 //
-console.log(frase3)
-
 console.log("_______________________________");
 
+
 // ------------------------------------------------------------
-// EXERCÍCIO 5 – Mensagem motivacional
+// EXERCÍCIO 5 – Mudando a lista
 // ------------------------------------------------------------
-// Crie uma variável com seu nome e outra com um objetivo para este ano.
-// Use template literal para criar uma mensagem motivacional personalizada.
+// a) Crie um array com vários dados de vários tipos diferentes.
+// b) Exiba a lista.
+// c) Remova o primeiro e o último item da lista, utilizando as funções de array.
+// d) Exiba a lista novamente.
+// e) Adicione um novo item no final e ou no início da lista.
+// f) Exiba a lista final.
 
 // → Seu código aqui:
-const nome2 = 'Isabella'
-let objetivo1 = 'aprendido e posto em prática o básico da programação'
+let aleatorio = ["banana", 28, false, 59, "corrida", true]
 //
-const frase4 = `Eu, ${nome2}, acredito que com motivação e dedicação ao fim do ano eu possa ter ${objetivo1}. `
+console.log(aleatorio)
 //
-console.log(frase4)
-
+aleatorio.shift()
+aleatorio.pop()
+//
+console.log(aleatorio)
+//
+aleatorio.unshift('carro')
+aleatorio.push(45)
+//
+console.log(aleatorio)
+//
 console.log("_______________________________");
-
-// ------------------------------------------------------------
-// EXERCÍCIO 6 – Menu
-// ------------------------------------------------------------
-// Utilizando apenas console.log(), reproduza o menu que esta na imagem "exemplo-menu-atividade-01-2" anexa junto a esta atividade
-
-// → Seu código aqui:
-console.log('===================================')
-console.log('       SISTEMA DO USUÁRIO  ')
-console.log('===================================')
-console.log('1 - Ver Perfil')
-console.log('2 - Editar Perfil') 
-console.log('3 - Configurações')
-console.log('4 - Notificações')
-console.log('5 - Relatórios')
-console.log('6 - Ajuda')
-console.log('7 - Sobre o Sistema')
-console.log('8 - Sair')
-console.log('====================================')
-console.log('Digite o número da opção desejada')
-console.log('====================================')
-
-
-console.log("_______________________________"); 
-
