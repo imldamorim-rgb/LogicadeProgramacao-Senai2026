@@ -12,6 +12,7 @@
 //       não serão solicitados novamente.
 // ============================================================
 
+let buscarCodigo = require('readline-sync');
 
 // ------------------------------------------------------------
 // EXERCÍCIO 1 – Comparando com == e ===
@@ -29,6 +30,34 @@
 
 // → Seu código aqui:
 
+let na1 = 10
+let na2 = 10
+
+let nb1 = 10
+let nb2 = "10"
+
+let nc1 = 0
+let nc2 = false
+
+let nd1 = null
+let nd2 = undefined
+
+let ne1 = "JS"
+let ne2 = "JS"
+
+//a
+console.log(`10 == 10 → ${na1 == na2}`);
+console.log(`10 == "10" → ${nb1 == nb2}`);
+console.log(`0 == false → ${nc1 == nc2}`);
+console.log(`null == undefined → ${nd1 == nd2}`);
+console.log(`"JS" == "JS" → ${ne1 == ne2}`);
+
+//b
+console.log(`10 === 10 → ${na1 === na2}`);
+console.log(`10 === "10" → ${nb1 === nb2}`);
+console.log(`0 === false → ${nc1 === nc2}`);
+console.log(`null === undefined → ${nd1 === nd2}`);
+console.log(`"JS" === "JS" → ${ne1 === ne2}`);
 
 console.log("_______________________________");
 
@@ -48,6 +77,17 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+//a
+console.log(5 != 5 );
+console.log(5 != "5");
+console.log(7 != 3);
+console.log(true != 1);
+
+//b
+console.log(5 !== 5 );
+console.log(5 !== "5");
+console.log(7 !== 3);
+console.log(true !== 1);
 
 console.log("_______________________________");
 
@@ -66,7 +106,21 @@ console.log("_______________________________");
 //    "Salário A (R$ <a>) > Salário B (R$ <b>): <resultado>"
 
 // → Seu código aqui:
-
+//A
+let salarioA = 3500
+let salarioB = 4200
+//B
+let salario1 = false
+let salario2 = true
+let salario3 = false
+let salario4 = true
+let salario5 = false
+//c
+console.log(`Salário A (${"R$", salarioA})  >   Salário B (${"R$", salarioB}) = ${salario1 ? "Sim, é maior" : "Não, é menor"}`);
+console.log(`Salário A (${"R$", salarioA})  <   Salário B (${"R$", salarioB}) = ${salario2 ? "Sim, é menor" : "Não, é maior"}`);
+console.log(`Salário A (${"R$", salarioA})  >=  Salário B (${"R$", salarioB}) = ${salario3 ? "Sim, é maior ou igual" : "Não, é menor ou diferente"}`);
+console.log(`Salário A (${"R$", salarioA})  <=  salário B (${"R$", salarioB}) = ${salario4 ? "Sim, é menor ou igual" : "Não, é maior ou diferente"}`);
+console.log(`Salário A (${"R$", salarioA})  === salário B (${"R$", salarioB}) = ${salario5 ? "Sim, é igual" : "Não, é diferente"}`);
 
 console.log("_______________________________");
 
@@ -82,7 +136,17 @@ console.log("_______________________________");
 // f) Exiba cada variável usando template literal.
 
 // → Seu código aqui:
+let estoque = 0
+let temEstoque = estoque > 0
+let estoqueZerado = estoque === 0
+let temperatura = 36.5
+let febre = temperatura >= 37.6
 
+console.log(`Estoque: ${estoque}
+Tem estoque: ${temEstoque}
+Estoque está zerado: ${estoqueZerado}
+Temperatura: ${temperatura}
+Está com febre: ${febre}`)
 
 console.log("_______________________________");
 
@@ -99,7 +163,18 @@ console.log("_______________________________");
 // c) Exiba cada resultado com template literal.
 
 // → Seu código aqui:
+let numero1 = buscarCodigo.questionInt("Digite o 1 número: ");
+let numero2 = buscarCodigo.questionInt("Digite o 2 número: ");
 
+let var1 = numero1 > numero2;
+let var2 = numero1 < numero2;
+let var3 = numero1 === numero2;
+let var4 = numero1 >= numero2;
+
+console.log(`Número 1 > número 2: ${var1}`);
+console.log(`Número 1 < número 2: ${var2}`);
+console.log(`Número 1 === número 2: ${var3}`);
+console.log(`Número 1 >= número 2: ${var4}`);
 
 console.log("_______________________________");
 
@@ -117,7 +192,15 @@ console.log("_______________________________");
 //    "Item caro (> R$ <precoMaximo>)? : <esteItemEhCaro ? "Sim" : "Não">"
 
 // → Seu código aqui:
+ 
+let precoProduto = buscarCodigo.questionFloat("Digite o preço do produto: ")
+const precoMaximo = 100
+let estaDentroDoOrcamento = precoProduto <= precoMaximo
+let esteItemEhCaro = precoProduto > precoMaximo
 
+console.log(`Preço informado: R$ ${precoProduto}
+Dentro do orçamento (≤ R$ ${precoMaximo})? : ${estaDentroDoOrcamento ? "Sim" : "Não"}"
+Item caro (> R$ ${precoMaximo})? : ${esteItemEhCaro ? "Sim" : "Não"}"`)
 
 console.log("_______________________________");
 
@@ -137,6 +220,33 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+//a
+let info1 = {
+    nome: buscarCodigo.question("Digite o 1 nome: "),
+    idade: buscarCodigo.question("Digite a 1 idade: "),
+};
+let info2 = {
+    nome: buscarCodigo.question("Digite o 2 nome: "),
+    idade: buscarCodigo.question("Digite a 2 idade: "),
+};
+
+let cadastro = [info1, info2];
+
+//b
+let comparacao1 = info1.idade > info2.idade;
+let comparacao2 = info1.idade === info2.idade;
+let comparacao3 = info1.idade >= 18;
+let comparacao4 = info2.idade >= 18;
+
+//c
+console.log(`Idade da ${cadastro[0].nome} é ${cadastro[0].idade} e ela é ${comparacao3 ? "maior de idade" : "menor de idade"}.
+Idade da ${cadastro[1].nome} é ${cadastro[1].idade} e ela é ${comparacao4 ? "maior de idade" : "menor de idade"}.
+A idade (${cadastro[0].idade}) de ${cadastro[0].nome} > que a idade (${cadastro[1].idade}) de ${cadastro[1].nome}: ${comparacao1 ? "Sim é maior" : "Não, é menor"}
+A idade (${cadastro[0].idade}) de ${cadastro[0].nome} === a idade (${cadastro[1].idade}) de ${cadastro[1].nome}: ${comparacao2 ? "Sim, é igual" : "Não, é diferente"}`)
+
+//d
+console.log(`Quem é a pessoa mais velha: ${cadastro[0].idade >= cadastro[1].idade ? `${cadastro[0].nome}` : `${cadastro[1].nome}`}`)
+
 
 console.log("_______________________________");
 
@@ -146,10 +256,38 @@ console.log("_______________________________");
 // ------------------------------------------------------------
 // a) Peça ao usuário o nome e três notas de 2 alunos e armazene como objetos dentro de uma lista "alunos".
 // b) Calcule a média de cada aluno e armazene em "mediaAluno1" e "mediaAluno2".
-// e) Verifique e exiba no console qual aluno obteve a maior média usando template literal e comparador ternário
-// c) Compare e exiba no console, qual aluno obteve a primeira maior nota, a segunda e a terceira.
+// c) Verifique e exiba no console qual aluno obteve a maior média usando template literal e comparador ternário
+// d) Compare e exiba no console, qual aluno obteve a primeira maior nota, a segunda e a terceira.
 //    Exemplo: `Aluno com primeira maior nota: ${nota1aluno1 > nota1aluno2 ? nomeAluno1 : nomeAluno2}`
+
 // → Seu código aqui:
 
+//a
+let alunos = [
+    aluno1 = {
+        nome: buscarCodigo.question(`Nome do primeiro aluno: `),
+        nota1: buscarCodigo.questionFloat(`Digite a 1 nota: `),
+        nota2: buscarCodigo.questionFloat(`Digite a 2 nota: `),
+        nota3: buscarCodigo.questionFloat(`Digite a 3 nota: `)
+    },
+    aluno2 = {
+        nome: buscarCodigo.question(`Nome do segundo aluno: `),
+        nota1: buscarCodigo.questionFloat(`Digite a 1 nota: `),
+        nota2: buscarCodigo.questionFloat(`Digite a 2 nota: `),
+        nota3: buscarCodigo.questionFloat(`Digite a 3 nota: `)
+    }
+]
+
+//b
+let mediaAluno1 = alunos[0].nota1 + alunos[0].nota2 + alunos[0].nota3 / alunos[0].lenght
+let mediaAluno2 = alunos[1].nota1 + alunos[1].nota2 + alunos[1].nota3 / alunos[1].lenght
+
+//c
+console.log(`Qual aluno teve a maior média: ${mediaAluno1 >= mediaAluno2 ? `${alunos[0].nome}` : `${alunos[1].nome}`}`);
+
+//d
+console.log(`Qual aluno teve a 1° maior nota: ${alunos[0].nota1 > alunos[1].nota1 ? `${alunos[0].nome}` : `${alunos[1].nome}`}`)
+console.log(`Qual aluno teve a 2° maior nota: ${alunos[0].nota2 > alunos[1].nota2 ? `${alunos[0].nome}` : `${alunos[1].nome}`}`)
+console.log(`Qual aluno teve a 3° maior nota: ${alunos[0].nota3 > alunos[1].nota3 ? `${alunos[0].nome}` : `${alunos[1].nome}`}`)
 
 console.log("_______________________________");
