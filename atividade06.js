@@ -192,6 +192,14 @@ console.log("_______________________________");
 // c) Exiba a variável "statusMulta" com template literal mostrando a velocidade e o resultado da multa.
 
 // → Seu código aqui:
+//a
+let velocidade = 110;
+let limiteVelocidade = 100;
+//b
+let statusMulta = velocidade > limiteVelocidade ? "Multa Aplicada" : "Velocidade Regular"
+//c
+console.log(`Velocidade atingida: ${velocidade}
+Situação: ${statusMulta}`);
 
 
 console.log("_______________________________");
@@ -209,6 +217,14 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+//a
+let ehEstudante = lerCodigo.keyInYN(`Você é estudante:`);
+//b
+let valor = lerCodigo.keyInYN(`Você paga mais que R$ 1000,00 mensais pelo curso:`);
+//c
+let mensagem = ehEstudante && valor ? "Desconto Aplicado" : "Desconto não Aplicado"
+//d
+console.log(`Situação: ${mensagem}`);
 
 console.log("_______________________________");
 
@@ -231,6 +247,21 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+//a
+let dadosUsuario = {
+    idade: lerCodigo.questionInt('Informe sua idade: '),
+    ingresso: lerCodigo.keyInYN('Possui ingresso: '),
+    associado: lerCodigo.keyInYN('É associado ao grupo: '),
+};
+//b
+let geral = {
+    podeEntrarNormal: (dadosUsuario.idade >=18 && dadosUsuario.ingresso) || dadosUsuario.associado,
+    podeEntrarSocio: dadosUsuario.ingresso && dadosUsuario.associado,
+    precisaAcompanhar: dadosUsuario.idade <18,
+    naoPodeEntrar: !dadosUsuario.ingresso && !dadosUsuario.associado
+}
+//c
+console.log(`Pode entrar: ${geral.podeEntrarNormal || geral.podeEntrarSocio ? "Entrada Liberada" : "Entrada Negada"}`)
 
 console.log("_______________________________");
 
@@ -251,6 +282,21 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+//A e B
+let produto = {
+    nomeProduto: lerCodigo.question("Nome do produto: "),
+    quantEstoque: lerCodigo.questionInt("Quantidade em estoque: "),
+    ativoSist: lerCodigo.keyInYN("O produto está ativo no sistema? "),
+}
+//c
+let temEstoque = produto.quantEstoque >0
+let produtoDisponivel = produto.temEstoque && produto.ativoSist
+let produtoIndisponivel = !produto.temEstoque || !produto.ativoSist
+//d
+console.log(`Tem estoque: ${temEstoque ? "Sim" : "Não"}
+O produto está disponível: ${produtoDisponivel ? "Sim" : "Não"}
+O produto está indisponível : ${produtoIndisponivel ? "Sim" : "Não"}`)
+
 
 console.log("_______________________________");
 
@@ -270,6 +316,21 @@ console.log("_______________________________");
 // d) Exiba todos os resultados.
 
 // → Seu código aqui:
+
+//A e B
+let usuario = {
+    administrador: lerCodigo.keyInYN("Você é administrador?"),
+    logado: lerCodigo.keyInYN("Você está logado?"),
+    contaAtiva: lerCodigo.keyInYN("A conta está ativa?"),
+}
+//c
+let acessoSistema = usuario.logado && usuario.contaAtiva
+let acessoAdmin = acessoSistema && usuario.administrador
+let acessoNegado = !usuario.logado || !usuario.contaAtiva
+//d
+console.log(`Possui acesso ao sistema: ${acessoSistema ? "Sim" : "Não"}
+Possui acesso de Administrador: ${acessoAdmin ? "Sim" : "Não"}
+Acesso negado: ${acessoNegado ? "Sim" : "Não"}`)
 
 
 console.log("_______________________________");
@@ -293,6 +354,20 @@ console.log("_______________________________");
 //    Caso contrário → "Usuário ou senha incorretos."
 
 // → Seu código aqui:
+//a
+let credenciaisSistema = {
+    usuario: "admin",
+    senha: "1234",
+}
+//b
+let perguntas = lerCodigo.question("Informe seu usuario:")
+let perguntas2 = lerCodigo.question("Informe sua senha:")
+//c
+let usuarioCorreto = perguntas === credenciaisSistema.usuario
+let senhaCorreta = perguntas2 === credenciaisSistema.senha
+let loginValido = usuarioCorreto && senhaCorreta
+//d
+console.log(`Exibindo: ${loginValido ? "Login realizado com sucesso" : "Usuario ou senhas incorretos"}`)
 
 
 console.log("_______________________________");
