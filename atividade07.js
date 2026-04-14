@@ -11,8 +11,12 @@
 // Dica: Ao terminar um exercício, comente-o. Assim os dados
 //       não serão solicitados novamente.
 // ============================================================
+<<<<<<< HEAD
 
 let lerTeclado = require('readline-sync');
+=======
+let baixarInfo = require('readline-sync')
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 
 // ------------------------------------------------------------
 // EXERCÍCIO 1 – If simples
@@ -21,6 +25,7 @@ let lerTeclado = require('readline-sync');
 // b) Se "pontos" for maior que 100, exiba: "Nível alcançado!".
 //    Mas se "pontos" for maior que 200, exiba somente: "Nível máximo alcançado!"
 
+<<<<<<< HEAD
 // → Seu código aqui:
 // //a
 // let pontos = 120;
@@ -32,6 +37,19 @@ let lerTeclado = require('readline-sync');
 // if(pontos > 200){
 //     console.log(`Nível máximo alcançado!`)
 // } 
+=======
+ //→ Seu código aqui:
+// A)
+let pontos = 120
+// B)
+if(pontos > 100){
+    console.log("Nível alcançado!")
+}
+
+if(pontos > 200){
+    console.log('Nível máximo alcançado!')
+}
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 
 console.log("_______________________________");
 
@@ -45,6 +63,7 @@ console.log("_______________________________");
 // d) Senão, exiba: "Boa noite!"
 
 // → Seu código aqui:
+<<<<<<< HEAD
 // //a
 // let hora = 14
 // //b
@@ -58,6 +77,20 @@ console.log("_______________________________");
 // }
 
 console.log("_______________________________");
+=======
+// A)
+let hora = 14
+// B)
+if (hora < 12) {
+    console.log("Bom dia!");
+  }
+if (hora < 18) {
+    console.log("Boa tarde! ");
+  } else {
+    console.log("Boa noite!"); 
+  }
+//console.log("_______________________________");
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 
 
 // ------------------------------------------------------------
@@ -69,6 +102,7 @@ console.log("_______________________________");
 //    Senão, exiba: "Jovem".
 
 // → Seu código aqui:
+<<<<<<< HEAD
 // //a
 // let idade = lerTeclado.questionInt(`Digite a sua idade: `);
 // //b
@@ -80,6 +114,18 @@ console.log("_______________________________");
 //     console.log(`Jovem`)
 // }
 
+=======
+// A)
+let idade = baixarInfo.questionInt('Idade: ')
+// B)
+if (idade >= 18) {
+    console.log("Adulto");
+  } else if (idade <= 12) {
+    console.log("Criança");
+  } else {
+    console.log("Jovem");
+  }
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 console.log("_______________________________");
 
 
@@ -95,6 +141,7 @@ console.log("_______________________________");
 // c) AO final, exiba a nota e a situação com template literal.
 
 // → Seu código aqui:
+<<<<<<< HEAD
 // //a
 // let notaAluno = 6.8;
 // //b
@@ -112,6 +159,26 @@ console.log("_______________________________");
 // //c
 // console.log(`Nota: ${notaAluno}`);
 // console.log(`Situação: ${status}`);
+=======
+// A)
+let notaAluno = 6.8
+// B)
+let status;
+
+if(notaAluno >= 9){
+    status = "Aprovado com mérito"
+} else if(notaAluno >= 7){
+    status = "Aprovado"
+} else if(notaAluno >= 5){
+    status = "Recuperação"
+} else{
+    status = "Reprovado"
+};
+// C)
+console.log(`
+Nota: ${notaAluno}
+Situação: ${status}`);
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 
 console.log("_______________________________");
 
@@ -128,6 +195,7 @@ console.log("_______________________________");
 //    - temperatura > 35           → "Muito quente"
 
 // → Seu código aqui:
+<<<<<<< HEAD
 // //a
 // let temperatura = lerTeclado.questionFloat(`Qual a temperatra atual: `)
 // //b
@@ -145,6 +213,24 @@ console.log("_______________________________");
 // }
 // console.log(temperaturaAtual)
 
+=======
+// A)
+let temperatura = baixarInfo.questionFloat('Temperatura atual: ')
+// B)
+let temperaturaAtual;
+if(temperatura < 10){
+    temperaturaAtual = "Muito frio"
+} else if(temperatura >= 10 && temperatura < 18){
+    temperaturaAtual = "Frio"
+  } else if(temperatura >= 18 && temperatura <= 25){
+    temperaturaAtual = "Agradavel"
+} else if(temperatura > 25 && temperatura <= 35){
+    temperaturaAtual = "Quente"
+  } else {
+    temperaturaAtual = "Muito quente"
+}
+console.log(temperaturaAtual);
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 console.log("_______________________________");
 
 
@@ -162,6 +248,7 @@ console.log("_______________________________");
 //      - caso contrário → "Entrada inteira."
 
 // → Seu código aqui:
+<<<<<<< HEAD
 // let info = {
 //     nome: lerTeclado.question(`Digite seu nome: `),
 //     ingresso: lerTeclado.keyInYN(`Possui ingresso: `),
@@ -178,6 +265,26 @@ console.log("_______________________________");
 //         console.log(`Entrada inteira.`)
 //     } 
 //     }
+=======
+// A)
+let usuario = {
+    nome: baixarInfo.question("Nome: "),
+    ingresso: baixarInfo.keyInYN("Possui ingrasso: "),
+    idade: baixarInfo.questionInt("Idade: "),
+};
+// B)
+if(!usuario.ingresso){
+    console.log(`${usuario.nome}, dirija-se à bilheteria.`)
+    } else {
+    if(usuario.idade < 18){
+        console.log("Meia-entrada: menor de idade.")
+    }else if (usuario.idade >= 60){
+        console.log("Meia-entrada: melhor idade")
+    } else {
+        console.log("Entrada inteira.")
+    }
+}
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 console.log("_______________________________");
 
 
@@ -194,6 +301,7 @@ console.log("_______________________________");
 //    - Senão          → exiba: "<nome>, você não atende aos requisitos."
 
 // → Seu código aqui:
+<<<<<<< HEAD
 // let motorista = {
 //     nome: lerTeclado.question(`Digite seu nome: `),
 //     idade: lerTeclado.questionInt(`Digite sua idade: `),
@@ -204,6 +312,20 @@ console.log("_______________________________");
 // } else{
 //     console.log(`${motorista.nome}, você não atende aos requisitos`)
 // }
+=======
+// A)
+let motorista ={
+    nome: baixarInfo.question('Nome: '),
+    idade: baixarInfo.questionInt("Idade: "),
+    cnh: baixarInfo.keyInYN("Possui habilitação: "),
+}
+// C)
+if(motorista.idade > 20 && motorista.cnh){
+    console.log(`${motorista.nome}, você pode alugar o veículo.`)
+} else {
+    console.log(`${motorista.nome}, você não atende aos requisitos.`)
+}
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 console.log("_______________________________");
 
 
@@ -217,6 +339,7 @@ console.log("_______________________________");
 //    Senão → exiba: "Sem desconto. Preço cheio."
 
 // → Seu código aqui:
+<<<<<<< HEAD
 // let estudante = lerTeclado.keyInYN(`É estudante: `);
 // let idoso = lerTeclado.keyInYN(`Possui 60 anos ou mais: `);
 
@@ -227,6 +350,17 @@ console.log("_______________________________");
 // }
 
 
+=======
+// A)
+let estudante = baixarInfo.keyInYN("É estudante: ")
+let idoso = baixarInfo.keyInYN("Tem 60 ou é +60: ")
+// B)
+if(estudante || idoso){
+    console.log('Desconto de 50% aplicado!')
+} else {
+    console.log("Sem desconto. Preço cheio.")
+}
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 console.log("_______________________________");
 
 
@@ -247,6 +381,7 @@ console.log("_______________________________");
 // e) Exiba uma mensagem final: "<nome>: <situação> (média: <média>)"
 
 // → Seu código aqui:
+<<<<<<< HEAD
 // let aluno = {
 //     nome: lerTeclado.question(`Digite seu nome: `),
 //     nota1: lerTeclado.questionFloat(`Digite a nota da 1° prova: `),
@@ -266,6 +401,30 @@ console.log("_______________________________");
 
 // console.table(aluno)
 // console.log(`${aluno.nome}: ${notafinal} (média: ${aluno.media})`)
+=======
+// A)
+let aluno = {
+    nome: baixarInfo.question("Nome do aluno: "),
+    nota1: baixarInfo.questionInt("Nota da prova 1: "),
+    nota2: baixarInfo.questionInt("Nota da prova 2: ")
+}
+// B)
+let media = (aluno.nota1 + aluno.nota2) / 2
+aluno.media = media
+// C)
+let notaFinal;
+if(media >= 7){
+    notaFinal = "Aprovado"
+} else if(media >= 5 ){
+    notaFinal = "Em recuperação"
+} else {
+    notaFinal = "Reprovado"
+}
+// D)
+console.table(aluno)
+// E)
+console.log(`${aluno.nome}: ${notaFinal} ( Média: ${media})`)
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 console.log("_______________________________");
 
 
@@ -288,6 +447,7 @@ console.log("_______________________________");
 // g) Chame o professor para realizar alguns testes 🫡
 
 // → Seu código aqui:
+<<<<<<< HEAD
 let num1 = lerTeclado.questionInt(`Digite o 1 numero escolhido: `)
 let num2 = lerTeclado.questionInt(`Digite o 2 numero escolhido: `)
 
@@ -302,5 +462,45 @@ calculo.numeroA = num1
 calculo.numeroB = num2
 calculo.operacao = escolha
 calculo.simbolo = -
+=======
+// A)
+let num1 = baixarInfo.questionFloat("Digite o primeiro numero escolhido: ")
+let num2 = baixarInfo.questionFloat("Digite o segundo numero escolhido: ")
+// B)
+console.log("Escolha o numero da operacao")
+console.log("1 – Soma")
+console.log('2 – Subtração')
+console.log('3 – Multiplicação')
+console.log('4 – Divisão')
+
+let operacao = baixarInfo.questionInt('Digite a opcao desejada: ')
+// C)
+let calculo = {
+    num1,
+    num2,
+    operacao,
+    simbolo: ""
+}
+// D)
+let resultado;
+if (operacao === 1){
+    resultado = num1 + num2
+    calculo.simbolo = "+"
+} else if(operacao === 2){
+    resultado = num1 - num2
+    calculo.simbolo = "-"
+} else if(operacao === 3){
+    resultado = num1 * num2
+    calculo.simbolo = "*"
+} else if(operacao === 4){
+    resultado = num1 / num2
+    calculo.simbolo = "/"
+}else{
+    resultado = num2 / 0
+    console.log("Erro ao exibir o resultado da divisão")
+}
+// E)
+console.log(`${num1} ${calculo.simbolo} ${num2} = ${resultado}`)
+>>>>>>> 2ec556d065d173c1966bf443f77720d8c9824e6b
 
 console.log("_______________________________");
