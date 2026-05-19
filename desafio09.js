@@ -71,8 +71,6 @@ console.table(historico)
 console.log("_______________________________");
 
 
-
-
 // ------------------------------------------------------------
 // DESAFIO 2 – Cadastro e relatório de alunos
 // ------------------------------------------------------------
@@ -97,105 +95,103 @@ console.log("_______________________________");
 
 
 // → Seu código aqui:
-// let qtd = lerTudo.questionInt("Quantos alunos: ");
+
+let qtd = lerTudo.questionInt("Quantos alunos: ");
 
 
-// let turma = [];
+let turma = [];
 
 
-// let somaGeral = 0;
-// let maiorMedia = -Infinity;
-// let menorMedia = Infinity;
-// let nomeMaior = "";
-// let nomeMenor = "";
+let somaGeral = 0;
+let maiorMedia = -Infinity;
+let menorMedia = Infinity;
+let nomeMaior = "";
+let nomeMenor = "";
 
 
-// let aprovados = 0;
-// let recuperacao = 0;
-// let reprovados = 0;
+let aprovados = 0;
+let recuperacao = 0;
+let reprovados = 0;
 
 
-// for (let i = 1; i <= qtd; i++) {
-//     let nome = lerTudo.question(`Nome do aluno ${i}: `);
+for (let i = 1; i <= qtd; i++) {
+    let nome = lerTudo.question(`Nome do aluno ${i}: `);
 
 
-//     let n1 = lerTudo.questionFloat("Nota 1: ");
-//     let n2 = lerTudo.questionFloat("Nota 2: ");
-//     let n3 = lerTudo.questionFloat("Nota 3: ");
+    let n1 = lerTudo.questionFloat("Nota 1: ");
+    let n2 = lerTudo.questionFloat("Nota 2: ");
+    let n3 = lerTudo.questionFloat("Nota 3: ");
 
 
-//     let media = (n1 + n2 + n3) / 3;
+    let media = (n1 + n2 + n3) / 3;
 
 
-//     let situacao = "";
+    let situacao = "";
 
 
-//     if (media >= 7) {
-//         situacao = "Aprovado";
-//         aprovados++;
-//     } else if (media >= 5) {
-//         situacao = "Recuperacao";
-//         recuperacao++;
-//     } else {
-//         situacao = "Reprovado";
-//         reprovados++;
-//     }
+    if (media >= 7) {
+        situacao = "Aprovado";
+        aprovados++;
+    } else if (media >= 5) {
+        situacao = "Recuperacao";
+        recuperacao++;
+    } else {
+        situacao = "Reprovado";
+        reprovados++;
+    }
 
 
-//     turma.push({
-//         nome: nome,
-//         notas: [n1, n2, n3],
-//         media: media.toFixed(2),
-//         situacao: situacao
-//     });
+    turma.push({
+        nome: nome,
+        notas: [n1, n2, n3],
+        media: media.toFixed(2),
+        situacao: situacao
+    });
 
 
-//     somaGeral += media;
+    somaGeral += media;
 
 
-//     if (media > maiorMedia) {
-//         maiorMedia = media;
-//         nomeMaior = nome;
-//     }
+    if (media > maiorMedia) {
+        maiorMedia = media;
+        nomeMaior = nome;
+    }
 
 
-//     if (media < menorMedia) {
-//         menorMedia = media;
-//         nomeMenor = nome;
-//     }
-// }
+    if (media < menorMedia) {
+        menorMedia = media;
+        nomeMenor = nome;
+    }
+}
 
 
-// // Relatório
-// console.log("RELATORIO");
-// for (let i = 0; i < turma.length; i++) {
-//     console.log(
-//         turma[i].nome + " | Media: " + turma[i].media + " | " + turma[i].situacao
-//     );
-// }
+// Relatório
+console.log("RELATORIO");
+for (let i = 0; i < turma.length; i++) {
+    console.log(
+        turma[i].nome + " | Media: " + turma[i].media + " | " + turma[i].situacao
+    );
+}
 
 
 
 
-// // Estatísticas
-// let mediaGeral = somaGeral / qtd;
+// Estatísticas
+let mediaGeral = somaGeral / qtd;
 
 
-// console.log("Media geral:", mediaGeral.toFixed(2));
-// console.log("Maior media:", nomeMaior);
-// console.log("Menor media:", nomeMenor);
-// console.log("Aprovados:", aprovados);
-// console.log("Recuperacao:", recuperacao);
-// console.log("Reprovados:", reprovados);
+console.log("Media geral:", mediaGeral.toFixed(2));
+console.log("Maior media:", nomeMaior);
+console.log("Menor media:", nomeMenor);
+console.log("Aprovados:", aprovados);
+console.log("Recuperacao:", recuperacao);
+console.log("Reprovados:", reprovados);
 
 
-// console.table(turma);
+console.table(turma);
 
 
 console.log("_______________________________");
-
-
-
 
 // ------------------------------------------------------------
 // DESAFIO 3 – Jogo de adivinhar o número
@@ -218,14 +214,41 @@ console.log("_______________________________");
 
 
 // → Seu código aqui:
-let number =
+let number = Math.floor(Math.random() * 100) + 1;
+let maxTentativa = 7;
+let acertou = false
+let tentativasUsadas = 0
 
+for(let i = 0; i < maxTentativa; i++){
+    let palpite = lerTudo.questionInt(`Tentativa ${i}: Faça um palpite: `)
+    tentativasUsadas++
 
+    if(palpite === number){
+        console.log(`Parabéns! Acertou em ${i} tentativas!`)
+        acertou = true;
+        break;
+    } else if(palpite < number){
+        console.log(`Muito baixo!`)
+    } else{
+        console.log(`Muito alto!`)
+    }
+
+    if(i < maxTentativa){
+        console.log(`Tentativas restantes: ${maxTentativa - i}\n`)
+    }
+
+    if(tentativasUsadas === maxTentativa){
+        console.log(`Game over! O número era ${number}\n`)
+    }
+}
+
+console.log(`=== RESUMO ===
+Número secreto: ${number}.
+Número de tentativas usadas: ${tentativasUsadas}
+Resultado: ${acertou ? "Vitória" : "Derrota"}`)
 
 
 console.log("_______________________________");
-
-
 
 
 // ------------------------------------------------------------
@@ -251,19 +274,122 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
-
+// a) Array de vendas mensais
+const vendas = [
+    12500, 9800, 15200, 11000, 13750, 8900,
+    17300, 14600, 10200, 16800, 19500, 22000
+  ];
+  
+  // Array com os nomes dos meses
+  const meses = [
+    "Janeiro", "Fevereiro", "Março", "Abril",
+    "Maio", "Junho", "Julho", "Agosto",
+    "Setembro", "Outubro", "Novembro", "Dezembro"
+  ];
+  
+  // ------------------------------------------------------------
+  // b) Cálculos gerais
+  // ------------------------------------------------------------
+  
+  let total = 0;
+  
+  // Somando as vendas do ano
+  for (let i = 0; i < vendas.length; i++) {
+    total += vendas[i];
+  }
+  
+  // Média mensal
+  const media = total / vendas.length;
+  
+  // Inicializando maior e menor venda
+  let maiorVenda = vendas[0];
+  let menorVenda = vendas[0];
+  
+  let mesMaior = meses[0];
+  let mesMenor = meses[0];
+  
+  let acimaMedia = 0;
+  let abaixoMedia = 0;
+  
+  // Encontrando maior, menor e contagem acima/abaixo da média
+  for (let i = 0; i < vendas.length; i++) {
+  
+    // Maior venda
+    if (vendas[i] > maiorVenda) {
+      maiorVenda = vendas[i];
+      mesMaior = meses[i];
+    }
+  
+    // Menor venda
+    if (vendas[i] < menorVenda) {
+      menorVenda = vendas[i];
+      mesMenor = meses[i];
+    }
+  
+    // Acima ou abaixo da média
+    if (vendas[i] > media) {
+      acimaMedia++;
+    } else if (vendas[i] < media) {
+      abaixoMedia++;
+    }
+  }
+  
+  // ------------------------------------------------------------
+  // Exibição dos resultados gerais
+  // ------------------------------------------------------------
+  
+  console.log("===== RELATÓRIO ANUAL DE VENDAS =====");
+  
+  console.log(`Total de vendas no ano: R$ ${total.toFixed(2)}`);
+  
+  console.log(`Média mensal: R$ ${media.toFixed(2)}`);
+  
+  console.log(
+    `Maior venda: ${mesMaior} - R$ ${maiorVenda.toFixed(2)}`
+  );
+  
+  console.log(
+    `Menor venda: ${mesMenor} - R$ ${menorVenda.toFixed(2)}`
+  );
+  
+  console.log(`Meses acima da média: ${acimaMedia}`);
+  
+  console.log(`Meses abaixo da média: ${abaixoMedia}`);
+  
+  // ------------------------------------------------------------
+  // c) Relatório mês a mês
+  // ------------------------------------------------------------
+  
+  console.log("\n===== RELATÓRIO MENSAL =====");
+  
+  const relatorio = [];
+  
+  for (let i = 0; i < vendas.length; i++) {
+  
+    let situacao = "";
+  
+    if (vendas[i] > media) {
+      situacao = "Acima da média";
+    } else if (vendas[i] < media) {
+      situacao = "Abaixo da média";
+    } else {
+      situacao = "Na média";
+    }
+  
+    console.log(
+      `${meses[i]}: R$ ${vendas[i].toFixed(2)} - ${situacao}`
+    );
+  
+    // d) Array de objetos
+    relatorio.push({
+      mes: meses[i],
+      venda: vendas[i],
+      situacao: situacao
+    });
+  }
+  
+  console.log("\n===== TABELA =====");
+  
+  console.table(relatorio);
 
 console.log("_______________________________");
-
-
-
-
-
-
-
-
-// let min = 1
-// let max = 100
-// let number = Math.random() * (max - min) + min;
-// console.log(number)

@@ -7,7 +7,7 @@
 // Ao final, o jogo exibe a pontuação, o aproveitamento e
 // uma classificação baseada no desempenho.
 // ============================================================
-
+let lerTeclado = require('readline-sync')
 // ============================================================
 // BANCO DE PERGUNTAS (não altere)
 // ============================================================
@@ -76,6 +76,13 @@ const perguntas = [
   
   // → Seu código aqui:
   
+  let nome = lerTeclado.question('Informe seu nome: ')
+  console.log(`Seja bem-vindo(a) ${nome}. Boa sorte!\n`)
+
+  console.log(`=== REGRAS ===
+  - Total de perguntas: ${perguntas.length}.
+  - 1 ponto por acerto.
+  - Sem segunda chance por pergunta.`)
   
   console.log("\n_______________________________");
   
@@ -85,7 +92,7 @@ const perguntas = [
   // ============================================================
   //
   // PASSO 2 – Inicialize o acumulador de pontos:
-  //
+  
   // PASSO 3 – Use um for() de 0 até perguntas.length - 1 para percorrer o array de perguntas:
   //
   //   a) Exiba o número da pergunta e o total:
@@ -110,7 +117,9 @@ const perguntas = [
   //          Exiba: "Errado! A resposta correta era: <resposta>"
   
   // → Seu código aqui:
-  
+  let pontos = 0
+
+  for(let i=0; i < perguntas.length - 1; i++)
   
   console.log("\n_______________________________");
   
