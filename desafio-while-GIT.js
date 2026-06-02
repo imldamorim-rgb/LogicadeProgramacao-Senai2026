@@ -29,7 +29,61 @@ let lerCodigo = require(`readline-sync`)
 
 // → Seu código aqui:
 
-//   
+//a
+
+let saldo = lerCodigo.questionFloat('Informe o saldo inicial: R$ ')
+let taxa = lerCodigo.questionFloat('Informe a taxa de juros mensal (%): ')
+let meta = lerCodigo.questionFloat('Informe a meta de saldo: R$ ')
+
+
+let historico = []
+
+
+let nomesMeses = [
+  "Janeiro", "Fevereiro", "Março", "Abril",
+  "Maio", "Junho", "Julho", "Agosto",
+  "Setembro", "Outubro", "Novembro", "Dezembro"
+]
+
+
+let contadorMes = 0
+
+console.log("\n=== EVOLUÇÃO DO INVESTIMENTO ===")
+
+//b
+
+while (saldo < meta) {
+
+  saldo = saldo * (1 + taxa / 100)
+
+  
+  let indiceMes = contadorMes % 12
+  let ano = Math.floor(contadorMes / 12) + 1
+
+  let nomeMes = `${nomesMeses[indiceMes]} - Ano ${ano}`
+
+  
+  console.log(`${nomeMes}: R$ ${saldo.toFixed(2)}`)
+
+  
+  historico.push({
+    mes: nomeMes,
+    saldo: saldo.toFixed(2)
+  })
+
+  contadorMes++
+}
+
+//c
+
+console.log("\n================================")
+console.log(`Meta atingida em ${contadorMes} meses!`)
+console.log(`Saldo final: R$ ${saldo.toFixed(2)}`)
+console.log("================================")
+
+//d
+
+console.table(historico)
 
 console.log("_______________________________");
 
@@ -50,41 +104,41 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-// //A
-// let n = lerCodigo.questionInt(`Estabeleça um limite: `);
+//A
+let n = lerCodigo.questionInt(`Estabeleça um limite: `);
 
-// //B
-// let a = 0
-// let b = 1
-// let qtd = 0
+//B
+let a = 0
+let b = 1
+let qtd = 0
 
-// console.log(`Sequencia: `)
+console.log(`Sequencia: `)
 
-// while (a <= n){
-//     console.log(a),
-//     qtd++
+while (a <= n){
+    console.log(a),
+    qtd++
 
-//     let temp = a + b;
-//     a = b;
-//     b = temp;
-// }
+    let temp = a + b;
+    a = b;
+    b = temp;
+}
 
-// let x = 0
-// let y = 1
-// let fib = false
+let x = 0
+let y = 1
+let fib = false
 
-// while(x <= n){
-//     if(x === n){
-//         fib = true
-//         break;
-//     }
-//     let temp = x + y
-//     x = y
-//     y = temp
-// }
+while(x <= n){
+    if(x === n){
+        fib = true
+        break;
+    }
+    let temp = x + y
+    x = y
+    y = temp
+}
 
-// console.log(`Total de números na sequência até ${n}: ${qtd}`)
-// console.log(`É um número Fibonacci? ${fib ? 'É Fibonacci' : 'Não é Fibonacci'} `)
+console.log(`Total de números na sequência até ${n}: ${qtd}`)
+console.log(`É um número Fibonacci? ${fib ? 'É Fibonacci' : 'Não é Fibonacci'} `)
 
 
 console.log("_______________________________");
@@ -118,31 +172,31 @@ let produtos = [
 
 // → Seu código aqui:
 
-// let carrinho= [];
-// let continuar;
+let carrinho= [];
+let continuar;
 
-// do{
-//     console.log(produtos)
+do{
+    console.log(produtos)
 
-//     let escolha = lerCodigo.questionInt(`Escolha o produto (1 a 5): `) - 1
-//     let quant = lerCodigo.questionInt(`Quantidade: `)
+    let escolha = lerCodigo.questionInt(`Escolha o produto (1 a 5): `) - 1
+    let quant = lerCodigo.questionInt(`Quantidade: `)
 
-//     if(produtos[escolha] && produtos[escolha].estoque >= quant)
-//     {
-//         let subtotal = produtos[escolha].estoque >= quant
+    if(produtos[escolha] && produtos[escolha].estoque >= quant)
+    {
+        let subtotal = produtos[escolha].estoque >= quant
 
-//         carrinho.push({
-//             produto: produtos[escolha].nome,
-//             quant,
-//             subtotal,
-//         }); 
-//         produtos[escolha].estoque -= quant;
-// console.log(`Item adicionado`)
-// } else {
-//     console.log(`Sem estoque suficiente.`)
-// }
-// lerCodigo.keyInYN(`Continuar comprando?`)
-// } while(continuar)
+        carrinho.push({
+            produto: produtos[escolha].nome,
+            quant,
+            subtotal,
+        }); 
+        produtos[escolha].estoque -= quant;
+console.log(`Item adicionado`)
+} else {
+    console.log(`Sem estoque suficiente.`)
+}
+lerCodigo.keyInYN(`Continuar comprando?`)
+} while(continuar)
 
 console.log("_______________________________");
 
@@ -163,36 +217,36 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-// let senhaCorreta = 'js2025';
+let senhaCorreta = 'js2025';
 
-// let palpite = ''
-// let tentativas = 0
-// let resultado = 'Bloqueado'
+let palpite = ''
+let tentativas = 0
+let resultado = 'Bloqueado'
 
-// while(tentativas < 3){
+while(tentativas < 3){
     
-//     palpite = lerCodigo.question(`Digite a senha: `);
-//     tentativas++
+    palpite = lerCodigo.question(`Digite a senha: `);
+    tentativas++
 
-//     if(palpite === senhaCorreta){
-//         console.log(`Acesso liberado!`)
-//         resultado = 'Liberado'
-//         break;    
-//     } else {
-//         let restantes = 3 - tentativas
+    if(palpite === senhaCorreta){
+        console.log(`Acesso liberado!`)
+        resultado = 'Liberado'
+        break;    
+    } else {
+        let restantes = 3 - tentativas
 
-//         if(restantes > 0){
-//             console.log(`Senha incorreta! Restam: ${restantes} tentativa(s).`)
-//         } else {
-//             console.log(`Conta bloqueada!`)
-//         }
-//     }
-// }
+        if(restantes > 0){
+            console.log(`Senha incorreta! Restam: ${restantes} tentativa(s).`)
+        } else {
+            console.log(`Conta bloqueada!`)
+        }
+    }
+}
 
-// console.table({
-//     Tentativas: tentativas,
-//     Resultado: resultado
-// })
+console.table({
+    Tentativas: tentativas,
+    Resultado: resultado
+})
 
 console.log("_______________________________");
 

@@ -165,35 +165,35 @@ switch(modo){
 
 // Implemente seu código abaixo:
 
-// let min = NUM_MIN;
-// let max = NUM_MAX;
-// let acertou2 = false;
+let min = NUM_MIN;
+let max = NUM_MAX;
+let acertou2 = false;
 
-// console.log(`Pense em um número de 1 à 100...\n`);
+console.log(`Pense em um número de 1 à 100...\n`);
 
-//     for(let i = 0; i < MAX_TENTATIVAS; i++){
-//         let palpite = Math.floor((min + max) / 2)
+    for(let i = 0; i < MAX_TENTATIVAS; i++){
+        let palpite = Math.floor((min + max) / 2)
 
-//         console.log(`Tentativa ${i}: Meu palpite é ${palpite}`)
+        console.log(`Tentativa ${i}: Meu palpite é ${palpite}`)
 
-//         let resposta = lerTeclado.questionInt("1 - Acertei | 2 - Muito alto | 3 - Muito baixo: ")
+        let resposta = lerTeclado.questionInt("1 - Acertei | 2 - Muito alto | 3 - Muito baixo: ")
 
-//         if(resposta === 1){
-//             console.log(`Acertei em ${i} tentativas!`)
-//             acertou2 = true;
-//             break;
-//         } else if(resposta === 2){
-//             max = palpite - 1;
-//         } else if(resposta === 3){
-//             min = palpite + 1;
-//         } else {
-//             console.log(`Resposta inválida! Tente novamente.`)
-//             i--;
-//         }
-//     }
+        if(resposta === 1){
+            console.log(`Acertei em ${i} tentativas!`)
+            acertou2 = true;
+            break;
+        } else if(resposta === 2){
+            max = palpite - 1;
+        } else if(resposta === 3){
+            min = palpite + 1;
+        } else {
+            console.log(`Resposta inválida! Tente novamente.`)
+            i--;
+        }
+    }
 
-// if (!acertou2) {
-//     console.log("Não consegui adivinhar seu número!");
-//     let numero = lerTeclado.questionInt("Qual número você estava pensando? ");
-//     console.log(`O número secreto era: ${numero}`)
-// }
+if (!acertou2) {
+    console.log("Não consegui adivinhar seu número!");
+    let numero = lerTeclado.questionInt("Qual número você estava pensando? ");
+    console.log(`O número secreto era: ${numero}`)
+}

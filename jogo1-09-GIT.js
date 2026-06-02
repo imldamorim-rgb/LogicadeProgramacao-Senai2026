@@ -117,9 +117,31 @@ const perguntas = [
   //          Exiba: "Errado! A resposta correta era: <resposta>"
   
   // → Seu código aqui:
-  let pontos = 0
+// PASSO 2
 
-  for(let i=0; i < perguntas.length - 1; i++)
+let pontos = 0
+
+// PASSO 3
+
+for (let i = 0; i < perguntas.length; i++) {
+
+  console.log(`\nPergunta ${i + 1} de ${perguntas.length}`)
+  console.log(perguntas[i].texto)
+
+  console.log(`A) ${perguntas[i].opcoes[0]}`)
+  console.log(`B) ${perguntas[i].opcoes[1]}`)
+  console.log(`C) ${perguntas[i].opcoes[2]}`)
+  console.log(`D) ${perguntas[i].opcoes[3]}`)
+
+  let respostaJogador = lerTeclado.question('Sua resposta: ').toUpperCase()
+
+  if (respostaJogador === perguntas[i].resposta) {
+    console.log("Correto!")
+    pontos++
+  } else {
+    console.log(`Errado! A resposta correta era: ${perguntas[i].resposta}`)
+  }
+}
   
   console.log("\n_______________________________");
   
@@ -151,5 +173,46 @@ const perguntas = [
   
   // → Seu código aqui:
   
-  
-  console.log("\nObrigado por jogar!");
+// PASSO 4
+
+let aproveitamento = (pontos / perguntas.length) * 100
+
+// PASSO 5
+
+let classificacao = ""
+
+if (aproveitamento === 100) {
+  classificacao = "PERFEITO! Gênio!"
+} else if (aproveitamento >= 75) {
+  classificacao = "Excelente! Quase lá!"
+} else if (aproveitamento >= 50) {
+  classificacao = "Bom! Você sabe bastante."
+} else if (aproveitamento >= 25) {
+  classificacao = "Regular. Vale estudar mais."
+} else {
+  classificacao = "Fraco. Bora revisar o conteúdo!"
+}
+
+// PASSO 6
+
+console.log("|===============================================")
+console.log("| RESULTADO FINAL")
+console.log(`| Jogador: ${nome}`)
+console.log(`| Acertos: ${pontos} de ${perguntas.length}`)
+console.log(`| Aproveitamento: ${aproveitamento}%`)
+console.log(`| Classificação: ${classificacao}`)
+console.log("===============================================")
+
+// PASSO 7
+
+let resultado = {
+  jogador: nome,
+  acertos: pontos,
+  total: perguntas.length,
+  aproveitamento: `${aproveitamento}%`,
+  classificacao: classificacao
+}
+
+console.table(resultado)
+
+console.log("\nObrigado por jogar!");

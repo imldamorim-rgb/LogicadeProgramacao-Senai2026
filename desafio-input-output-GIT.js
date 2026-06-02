@@ -26,26 +26,26 @@
 
 // → Seu código aqui:
 
-// let cadastro = {
-//     nome: lerTeclado.question(`Informe seu nome: `),
-//     idade: lerTeclado.questionInt(`Informe seua idade: `),
-//     profissao: lerTeclado.question(`Informe sua profissao: `),
-//     cidade: lerTeclado.question(`Informe sua cidade: `),
-//     gostaJS: lerTeclado.keyInYN(`Gosta de JavaScript?  `),
-//     comida: [lerTeclado.question(`Informe suas comidas favoritas: `)],
-//     pessoas: {
-//         nome: lerTeclado.question(`Informe o nome da pessoa com que mora: `),
-//         idade: lerTeclado.questionInt(`Informe a idade desta pessoa: `),
-//     }
-// }
+let cadastro = {
+    nome: lerTeclado.question(`Informe seu nome: `),
+    idade: lerTeclado.questionInt(`Informe seua idade: `),
+    profissao: lerTeclado.question(`Informe sua profissao: `),
+    cidade: lerTeclado.question(`Informe sua cidade: `),
+    gostaJS: lerTeclado.keyInYN(`Gosta de JavaScript?  `),
+    comida: [lerTeclado.question(`Informe suas comidas favoritas: `)],
+    pessoas: {
+        nome: lerTeclado.question(`Informe o nome da pessoa com que mora: `),
+        idade: lerTeclado.questionInt(`Informe a idade desta pessoa: `),
+    }
+}
 
-// console.table(cadastro)
-// console.log(`Nome: ${cadastro.nome}. 
-// Idade: ${cadastro.idade} anos. 
-// Profissão: ${cadastro.profissao} em ${cadastro.cidade}. 
-// Gosta de JS: ${cadastro.gostaJS}
-// Comidas Favoritas: ${cadastro.comida}
-// Pessoa com quem mora: ${cadastro.pessoas.nome}`)
+console.table(cadastro)
+console.log(`Nome: ${cadastro.nome}. 
+Idade: ${cadastro.idade} anos. 
+Profissão: ${cadastro.profissao} em ${cadastro.cidade}. 
+Gosta de JS: ${cadastro.gostaJS}
+Comidas Favoritas: ${cadastro.comida}
+Pessoa com quem mora: ${cadastro.pessoas.nome}`)
 
 
 console.log("_______________________________");
@@ -64,24 +64,24 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-// let pessoa1 = {
-//     nome: lerTeclado.question(`Digite seu nome: `),
-//     idade: lerTeclado.question(`Digite sua idade: `),
-//     cidade: lerTeclado.question(`Informe sua cidade: `)
-// }
+let pessoa1 = {
+    nome: lerTeclado.question(`Digite seu nome: `),
+    idade: lerTeclado.question(`Digite sua idade: `),
+    cidade: lerTeclado.question(`Informe sua cidade: `)
+}
 
-// let pessoa2 = {
-//     nome: lerTeclado.question(`Digite seu nome: `),
-//     idade: lerTeclado.question(`Digite sua idade: `),
-//     cidade: lerTeclado.question(`Informe sua cidade: `)
-// }
+let pessoa2 = {
+    nome: lerTeclado.question(`Digite seu nome: `),
+    idade: lerTeclado.question(`Digite sua idade: `),
+    cidade: lerTeclado.question(`Informe sua cidade: `)
+}
 
-// let amigos = [pessoa1, pessoa2]
-// console.table(amigos)
+let amigos = [pessoa1, pessoa2]
+console.table(amigos)
 
-// console.log(amigos[1].nome, amigos[1].idade)
-// console.log(amigos[1].cidade)
-// console.log(amigos[0].nome)
+console.log(amigos[1].nome, amigos[1].idade)
+console.log(amigos[1].cidade)
+console.log(amigos[0].nome)
 
 
 console.log("_______________________________");
@@ -104,6 +104,61 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+console.info("Monte seu pedido")
+
+console.log(`
+╔══════════════════════╗
+║       ENTRADAS       ║
+║ Salada               ║
+║ Batata Frita         ║
+║ Nuggets              ║
+╚══════════════════════╝
+
+╔══════════════════════╗
+║   PRATO PRINCIPAL    ║
+║ Hambúrguer           ║
+║ Pizza                ║
+║ Macarrão             ║
+╚══════════════════════╝
+
+╔══════════════════════╗
+║      SOBREMESA       ║
+║ Sorvete              ║
+║ Bolo                 ║
+║ Pudim                ║
+╚══════════════════════╝
+
+╔══════════════════════╗
+║       BEBIDAS        ║
+║ Refrigerante         ║
+║ Suco                 ║
+║ Água                 ║
+╚══════════════════════╝
+`)
+
+let pedido = {
+    entrada: lerTeclado.question(`Escolha uma entrada: `),
+    pratoPrincipal: lerTeclado.question(`Escolha um prato principal: `),
+    sobremesa: lerTeclado.question(`Escolha uma sobremesa: `),
+
+    listaBebidas: [
+        lerTeclado.question(`Escolha a 1° bebida: `),
+        lerTeclado.question(`Escolha a 2° bebida: `)
+    ]
+}
+
+console.table(pedido)
+
+console.log(`
+Seu pedido:
+Entrada: ${pedido.entrada}
+Prato Principal: ${pedido.pratoPrincipal}
+Sobremesa: ${pedido.sobremesa}
+Bebida 1: ${pedido.listaBebidas[0]}
+Bebida 2: ${pedido.listaBebidas[1]}
+
+Bom apetite!
+`)
 
 
 console.log("_______________________________");
@@ -121,15 +176,15 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-// apelido = lerTeclado.question(`Digite seu apelido: `)
-// jogoFavorito = lerTeclado.question(`Qual seu jogo favorito: `)
-// hTotaisJogadas = lerTeclado.questionFloat(`Horas totais jogadas: `)
-// jogaTime = lerTeclado.keyInYN(`Joga em time? `)
+apelido = lerTeclado.question(`Digite seu apelido: `)
+jogoFavorito = lerTeclado.question(`Qual seu jogo favorito: `)
+hTotaisJogadas = lerTeclado.questionFloat(`Horas totais jogadas: `)
+jogaTime = lerTeclado.keyInYN(`Joga em time? `)
 
-// let perfil = {apelido, jogoFavorito, hTotaisJogadas, jogaTime}
+let perfil = {apelido, jogoFavorito, hTotaisJogadas, jogaTime}
 
-// console.table(perfil)
-// console.warn("Lembre-se que jogar não é problema, o problema é colocar o jogo como prioridade.")
+console.table(perfil)
+console.warn("Lembre-se que jogar não é problema, o problema é colocar o jogo como prioridade.")
 
 console.log("_______________________________");
 
@@ -148,27 +203,27 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-// let nome1 = lerTeclado.question(`Digite seu nome (1): `);
-// let cidade1 = lerTeclado.question(`Digite sua cidade favorita (1): `);
+let nome1 = lerTeclado.question(`Digite seu nome (1): `);
+let cidade1 = lerTeclado.question(`Digite sua cidade favorita (1): `);
 
-// let nome2 = lerTeclado.question(`Digite seu nome (2): `);
-// let cidade2 = lerTeclado.question(`Digite sua cidade favorita (2): `);
+let nome2 = lerTeclado.question(`Digite seu nome (2): `);
+let cidade2 = lerTeclado.question(`Digite sua cidade favorita (2): `);
 
-// let nome3 = lerTeclado.question(`Digite seu nome (3): `);
-// let cidade3 = lerTeclado.question(`Digite sua cidade favorita (3): `);
+let nome3 = lerTeclado.question(`Digite seu nome (3): `);
+let cidade3 = lerTeclado.question(`Digite sua cidade favorita (3): `);
 
-// let pss1 = {nome1, cidade1};
-// let pss2 = {nome2, cidade2};
-// let pss3 = {nome3, cidade3};
+let pss1 = {nome1, cidade1};
+let pss2 = {nome2, cidade2};
+let pss3 = {nome3, cidade3};
 
-// console.table(pss1);
+console.table(pss1);
 
-// let viajantes = [pss1, pss2, pss3];
-// console.table(viajantes);
+let viajantes = [pss1, pss2, pss3];
+console.table(viajantes);
 
-// console.info(`Total de viajantes: ${viajantes.length}`)
-// console.log(`Cidade favorita do 2 viajante: ${viajantes[1].cidade2}`)
-// console.log(`Nome do 1 viajante: ${viajantes[0].nome1}`)
+console.info(`Total de viajantes: ${viajantes.length}`)
+console.log(`Cidade favorita do 2 viajante: ${viajantes[1].cidade2}`)
+console.log(`Nome do 1 viajante: ${viajantes[0].nome1}`)
 
 console.log("_______________________________");
 
@@ -212,18 +267,21 @@ console.log("_______________________________");
 //
 // → Seu código aqui:
 
-let nome = lerTeclado.question(`Informe o nome do restaurante: `);
-let tipoCozinha = lerTeclado.question(`Tipo de comida: `);
-let nota = lerTeclado.questionFloat(`Nota: `);
-let aberto = lerTeclado.keyInYN(`Esta aberto? `);
-let endereco = {
-    rua: lerTeclado.question(`Rua: `),
-    numero: lerTeclado.questionInt(`Numero: `),
-    bairro: lerTeclado.question(`Bairro: `),
-    cidade: lerTeclado.question(`Cidade: `)
-};
+let restaurante = {
+    nome: lerTeclado.question(`Nome do restaurante: `),
+    tipoCozinha: lerTeclado.question(`Tipo de cozinha: `),
+    nota: lerTeclado.questionFloat(`Nota do restaurante: `),
+    aberto: lerTeclado.keyInYN(`O restaurante está aberto? `),
 
-let cardapio = [];
+    endereco: {
+        rua: lerTeclado.question(`Rua: `),
+        numero: lerTeclado.questionInt(`Número: `),
+        bairro: lerTeclado.question(`Bairro: `),
+        cidade: lerTeclado.question(`Cidade: `)
+    },
+}
+
+let cardapio = []
 
 for(let i = 0; i < 4; i++){
     let prato = {
@@ -234,13 +292,57 @@ for(let i = 0; i < 4; i++){
     cardapio.push(prato)
 }
 
-let restaurante = {
-    nome,
-    tipoCozinha,
-    nota,
-    aberto,
-    endereco,
-    cardapio
+restaurante.cardapio = cardapio
+
+// PASSO B
+
+console.log(`\nRestaurante: ${restaurante.nome} | Nota: ${restaurante.nota}`)
+
+console.log(
+`O restaurante ${restaurante.nome} está localizado na ${restaurante.endereco.rua}, ${restaurante.endereco.numero}, ${restaurante.endereco.bairro}, ${restaurante.endereco.cidade}`
+)
+
+console.log(
+`\n1° prato: ${restaurante.cardapio[0].nomePrato} | 
+Preço: R$${restaurante.cardapio[0].preco}`
+)
+
+console.log(
+`O prato ${restaurante.cardapio[2].nomePrato} é vegano: 
+${restaurante.cardapio[2].vegano}`
+)
+
+
+// PASSO C
+
+restaurante.cardapio[1].preco =
+lerTeclado.questionFloat(`Novo preço do 2° prato: `)
+
+restaurante.cardapio.push({
+    nomePrato: lerTeclado.question(`\nNovo prato: `),
+    preco: lerTeclado.questionFloat(`Preço do novo prato: `),
+    vegano: lerTeclado.keyInYN(`É vegano? `)
+})
+
+restaurante.aberto = false
+
+
+// PASSO D
+
+console.log(`
+Restaurante: ${restaurante.nome}
+Tipo de cozinha: ${restaurante.tipoCozinha}
+Nota: ${restaurante.nota}
+Status: ${restaurante.aberto ? "Aberto" : "Fechado"}
+Total de pratos: ${restaurante.cardapio.length}
+`)
+
+for(let prato of restaurante.cardapio){
+    console.log(`
+Prato: ${prato.nomePrato}
+Preço: R$${prato.preco}
+Vegano: ${prato.vegano}
+`)
 }
 
 
